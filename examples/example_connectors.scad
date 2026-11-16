@@ -11,7 +11,7 @@ render_part = "all"; // "all", "sleeve", "corner", "sleeve-corner", "edge"
 dim_ex = 20; // right triangle leg length
 thickness_ex = 2; // plate extrusion thickness
 plate_thickness_ex = 1.4; // small ledge/board support
-hole_dia_ex = 2.2; // through hole
+hole_dia_ex = 1.7; // M2 self-tapping pilot; 2.2-2.4 to clear an M2 for a nut
 hole_offset = 5;
 
 // Derived parameters

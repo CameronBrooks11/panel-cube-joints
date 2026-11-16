@@ -1,9 +1,9 @@
 # panel-cube-joints
 
 Parametric OpenSCAD connectors that join square panels, such as circuit
-boards, into boxes. Each connector is built from right-triangle plates, one
-per panel it holds, with a ledge that the panel's edge seats against and one
-screw hole per plate. A tray holds the finished box.
+boards, into boxes. Each connector is built from right-triangle plates, one per panel it
+holds, with one screw hole per plate. All but the edge connector also have a
+ledge that the panel's edge seats against. A tray holds the finished box.
 
 ![A two-cube box of 80 mm panels joined by the printed connectors, standing in its tray](docs/images/two-cube-box.jpg)
 
@@ -24,15 +24,19 @@ Their parameters:
 | --- | --- |
 | `dim` | leg length of each triangular plate |
 | `thickness` | plate thickness |
-| `plate_thickness` | width of the ledge the panel seats against |
+| `plate_thickness` | width of the ledge the panel seats against (not taken by `edge_connector`, which has no ledge) |
 | `hole_dia` | screw hole diameter |
 | `hole_loc` | screw hole position on each plate, from its right-angle corner |
 
-Place the holes to match the panel's own holes. With the panel seated against
-the ledge, a hole 5 mm in from each panel edge sits at
-`[5 + plate_thickness, 5 + plate_thickness]` on corner pieces. On the edge and
-sleeve pieces it sits at `[5, 5 + plate_thickness]`: the first coordinate is
-measured from the seam between the two panels.
+Place the holes to match the panel's own holes. The two-cube example below
+uses panels with holes 5 mm in from each edge, and puts its holes at:
+
+- `[5 + plate_thickness, 5 + plate_thickness]` on the sleeve-corner and corner
+  pieces
+- `[5, 5 + plate_thickness]` on the sleeve and edge pieces, where the first
+  coordinate is measured from the seam between the two panels
+
+These lined up with the panels on the printed box.
 
 ## Screws
 
@@ -59,7 +63,7 @@ set the tray's walls, floor and overall height.
 ## Example: a two-cube box
 
 `examples/example_two_cube_box.scad` lays out every part of the box in the
-photos, ready to print. Set `part` to `"connectors"` or `"tray"` to export
+photos, ready to print, each part with its lowest face on z = 0. Set `part` to `"connectors"` or `"tray"` to export
 them separately.
 
 The box is two 80 mm cubes end to end, 160 x 80 x 80 mm:
@@ -91,9 +95,9 @@ The exception is the new 1.7 mm pilot holes, described under Screws.
 
 - `examples/example_connectors.scad`: one of each connector
 - `examples/example_base_shell_simple.scad`: the two-cube tray on its own
-- `cube_cluster.scad` and `examples/example_cube_cluster.scad`: shows which
-  faces of a cluster of cubes are exposed, for planning a box. It draws
-  panels only, not connectors.
+- `cube_cluster.scad` and `examples/example_cube_cluster.scad`: for planning
+  a box from a cluster of cubes. It draws each cube as a translucent block and
+  a panel on each exposed face, with no connectors.
 
 ## License
 

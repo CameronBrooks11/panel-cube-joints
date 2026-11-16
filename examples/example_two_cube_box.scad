@@ -37,6 +37,7 @@ tray_height = 4.8;
 fit_allowance = 0.8;
 
 pitch = 3 * dim; // spacing between parts on the plate
+// Each part below is moved so its lowest point sits on z = 0.
 
 if (part == "all" || part == "connectors") {
   for (i = [0:3])
@@ -44,11 +45,11 @@ if (part == "all" || part == "connectors") {
       sleeve_corner_connector(dim, thickness, plate_thickness, hole_dia, corner_hole_loc);
 
   for (i = [0:3])
-    translate([i * pitch, pitch, 0])
+    translate([i * pitch, pitch, -thickness])
       corner_connector(dim, thickness, plate_thickness, hole_dia, corner_hole_loc);
 
   for (i = [0:1])
-    translate([i * pitch, 2 * pitch, 0])
+    translate([i * pitch, 2 * pitch, thickness])
       sleeve_connector(dim, thickness, plate_thickness, hole_dia, flat_hole_loc);
 
   for (i = [0:1])
@@ -57,7 +58,7 @@ if (part == "all" || part == "connectors") {
 }
 
 if (part == "all" || part == "tray")
-  translate([0, -pitch - plate_size, 0])
+  translate([0, -pitch - plate_size, tray_height / 2])
     base_shell(
       plate_size=plate_size,
       cube_count=cube_count,

@@ -1,8 +1,8 @@
 # panel-cube-joints
 
 Parametric OpenSCAD connectors that join square panels, such as circuit
-boards, into boxes. Each connector is built from right-triangle plates, one per panel it
-holds, with one screw hole per plate. All but the edge connector also have a
+boards, into boxes. Each connector is built from right-triangle plates, one
+per panel it holds, with one screw hole per plate. All but the edge connector also have a
 ledge that the panel's edge seats against. A tray holds the finished box.
 
 ![A two-cube box of 80 mm panels joined by the printed connectors, standing in its tray](docs/images/two-cube-box.jpg)
@@ -63,8 +63,8 @@ set the tray's walls, floor and overall height.
 ## Example: a two-cube box
 
 `examples/example_two_cube_box.scad` lays out every part of the box in the
-photos, ready to print, each part with its lowest face on z = 0. Set `part` to `"connectors"` or `"tray"` to export
-them separately.
+photos, ready to print, each part with its lowest face on z = 0. Set `part`
+to `"connectors"` or `"tray"` to export them separately.
 
 The box is two 80 mm cubes end to end, 160 x 80 x 80 mm:
 

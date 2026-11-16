@@ -4,25 +4,28 @@
 // Each unit is composed of extruded right-triangle plates
 // ===============================================================
 
-// Optional: math utilities (e.g. z_fight helpers)
-use <lib/geometry_utils.scad>;
-
 // ---------------- Global defaults ----------------
-$fn = $preview ? 32 : 128;
 z_fight = $preview ? 0.01 : 0;
+
+// Facets on each screw hole. Set here, on the hole itself, because a
+// top-level $fn in this file does not reach callers that `use` it: they
+// got 5-sided holes from OpenSCAD's defaults.
+hole_fn = 64;
 
 // ===============================================================
 //  Base components
 // ===============================================================
 
 // ---- Unit: right triangle plate with screw hole ----
+// hole_dia is the hole's diameter: about 1.7 mm for an M2 screw to tap
+// into the plastic, or 2.2-2.4 mm to clear one for a nut.
 module tri_right_plate(dim, thickness, hole_dia, hole_loc) {
   difference() {
     linear_extrude(height=thickness)
       polygon(points=[[0, 0], [dim, 0], [0, dim]], paths=[[0, 1, 2]]);
     translate(hole_loc)
       translate([0, 0, -z_fight / 2])
-        cylinder(h=thickness + z_fight, r=hole_dia / 2);
+        cylinder(h=thickness + z_fight, r=hole_dia / 2, $fn=hole_fn);
   }
 }
 

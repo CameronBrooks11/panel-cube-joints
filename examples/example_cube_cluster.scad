@@ -1,3 +1,6 @@
+// Planning a box from cubes
+// A cluster of 40 mm cubes with a panel on every exposed face, and no connectors.
+
 include <../cube_cluster.scad>
 
 dim = 40;

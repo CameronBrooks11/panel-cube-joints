@@ -1,3 +1,6 @@
+// The tray
+// An open tray for two 80 mm cubes, with 1.6 mm walls and a 1.2 mm floor.
+
 use <../base_shell.scad>;
 
 // ---- Example Usage ----

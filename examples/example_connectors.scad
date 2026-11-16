@@ -1,3 +1,6 @@
+// The four connectors
+// One each of the sleeve-corner, sleeve, corner and edge connectors.
+
 use <../connectors.scad>;
 
 // ===============================================================

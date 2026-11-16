@@ -100,6 +100,16 @@ The exception is the new 1.7 mm pilot holes, described under Screws.
   a box from a cluster of cubes. It draws each cube as a translucent block and
   a panel on each exposed face, with no connectors.
 
+## Checks
+
+`just test` takes under a second on OpenSCAD 2026.10.15. It renders every
+example with warnings treated as errors, and checks:
+
+- the two-cube box is 13 separate closed solids, each on z = 0;
+- the edge connector's volume matches round 1.7 mm holes (a five-sided hole
+  leaves about 2.2 mm³ more);
+- the tray is 171.6 x 91.6 x 4.8 mm.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).

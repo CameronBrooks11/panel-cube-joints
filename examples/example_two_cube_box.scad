@@ -1,3 +1,6 @@
+// A two-cube box
+// Every part of a 160 x 80 x 80 mm box of 80 mm panels, laid out to print: 12 connectors and the tray.
+
 use <../connectors.scad>;
 use <../base_shell.scad>;
 

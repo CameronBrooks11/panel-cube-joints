@@ -12,4 +12,4 @@ function clamp(x, a, b) = min(b, max(a, x));
 function rot_angle_from_x(n) = acos(clamp(dot([1, 0, 0], n) / normv(n), -1, 1));
 
 function rot_axis_from_x(n) =
-  let (c = cross([1, 0, 0], n)) (norm(c) < EPS && dot([1, 0, 0], n) < 0) ? [0, 0, 1] : c;
+    let (c = cross([1, 0, 0], n)) (norm(c) < EPS && dot([1, 0, 0], n) < 0) ? [0, 0, 1] : c;

@@ -5,7 +5,6 @@
 EPS = 1e-9;
 
 function dot(a, b) = a.x * b.x + a.y * b.y + a.z * b.z;
-function cross(a, b) = [a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x];
 function normv(v) = max(EPS, norm(v));
 function clamp(x, a, b) = min(b, max(a, x));
 

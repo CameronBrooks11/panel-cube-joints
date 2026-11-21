@@ -5,8 +5,6 @@ use <../connectors.scad>;
 use <../base_shell.scad>;
 
 // ===============================================================
-//  Every part of a two-cube box of 80 mm panels, laid out to print
-//
 //  The box is two 80 mm cubes end to end, 160 x 80 x 80 mm: two
 //  panels on each long side, one on each end, two on top as a lid
 //  that lifts off, standing in a tray. It takes 12 connectors and

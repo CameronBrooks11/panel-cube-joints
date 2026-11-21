@@ -3,10 +3,6 @@
 
 use <../connectors.scad>;
 
-// ===============================================================
-//  Example layout showing all four connector types
-// ===============================================================
-
 // Select which part to render, or "all" to see all four
 render_part = "all"; // "all", "sleeve", "corner", "sleeve-corner", "edge"
 

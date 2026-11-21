@@ -16,7 +16,3 @@ function has_cube_at(pos, arr) =
 
 function exposed_faces(pos, all) =
     [for (n = CUBE_FACE_NORMS) if (!has_cube_at(pos + n, all)) n];
-
-module triangle(p1, p2, p3) {
-    polygon(points=[p1, p2, p3]);
-}

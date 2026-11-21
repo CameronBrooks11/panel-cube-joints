@@ -3,10 +3,6 @@
 
 use <../connectors.scad>;
 
-// ===============================================================
-//  Example layout showing all four connector types
-// ===============================================================
-
 // Select which part to render, or "all" to see all four
 render_part = "all"; // "all", "sleeve", "corner", "sleeve-corner", "edge"
 
@@ -25,17 +21,17 @@ flat_hole_loc_ex = [hole_offset, hole_offset + plate_thickness_ex]; // local hol
 translate_dim_ex = (render_part == "all") ? dim_ex : 0;
 
 if (render_part == "all" || render_part == "sleeve-corner")
-  translate([translate_dim_ex * 0, 0, 0]) color("red")
-      sleeve_corner_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, corner_hole_loc_ex);
+    translate([translate_dim_ex * 0, 0, 0]) color("red")
+            sleeve_corner_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, corner_hole_loc_ex);
 
 if (render_part == "all" || render_part == "sleeve")
-  translate([translate_dim_ex * 3, 0, 0]) color("green")
-      sleeve_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, flat_hole_loc_ex);
+    translate([translate_dim_ex * 3, 0, 0]) color("green")
+            sleeve_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, flat_hole_loc_ex);
 
 if (render_part == "all" || render_part == "corner")
-  translate([0, translate_dim_ex * 3, 0]) color("blue")
-      corner_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, corner_hole_loc_ex);
+    translate([0, translate_dim_ex * 3, 0]) color("blue")
+            corner_connector(dim_ex, thickness_ex, plate_thickness_ex, hole_dia_ex, corner_hole_loc_ex);
 
 if (render_part == "all" || render_part == "edge")
-  translate([translate_dim_ex * 3, translate_dim_ex * 3, 0]) color("purple")
-      edge_connector(dim_ex, thickness_ex, hole_dia_ex, flat_hole_loc_ex);
+    translate([translate_dim_ex * 3, translate_dim_ex * 3, 0]) color("purple")
+            edge_connector(dim_ex, thickness_ex, hole_dia_ex, flat_hole_loc_ex);

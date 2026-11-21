@@ -110,6 +110,9 @@ example with warnings treated as errors, and checks:
   leaves about 2.2 mm³ more);
 - the tray is 171.6 x 91.6 x 4.8 mm.
 
+`just fmt` formats the `.scad` files with topiary 0.8.0, and `just check`
+fails if one is not formatted.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
